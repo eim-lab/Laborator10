@@ -121,7 +121,7 @@ public class GoogleMapsActivity extends AppCompatActivity implements GoogleApiCl
             navigateToLocation(latitudeValue, longitudeValue);
 
             MarkerOptions markerOptions = new MarkerOptions()
-                    .position(new LatLng(latitudeValue, latitudeValue))
+                    .position(new LatLng(latitudeValue, longitudeValue))
                     .title(nameContent)
                     .icon(BitmapDescriptorFactory.defaultMarker(Utilities.getDefaultMarker(markerTypeSpinner.getSelectedItemPosition()))
 

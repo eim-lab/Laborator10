@@ -135,9 +135,7 @@ public class GoogleMapsActivity extends AppCompatActivity  implements GoogleApiC
 
     private void navigateToLocation(double latitude, double longitude) {
         currentLocationTextView.setText(
-                "Latitude: " + latitude
-                + System.getProperty("line.separator")
-                + "Longitude: " + longitude
+                "geo:" + latitude + "," + longitude
         );
         CameraPosition cameraPosition = new CameraPosition.Builder()
                 .target(new LatLng(latitude, longitude))

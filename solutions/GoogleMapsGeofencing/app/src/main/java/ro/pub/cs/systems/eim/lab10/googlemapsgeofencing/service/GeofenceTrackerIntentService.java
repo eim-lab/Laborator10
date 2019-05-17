@@ -8,8 +8,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.os.Handler;
+import android.os.Looper;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.google.android.gms.location.Geofence;
 import com.google.android.gms.location.GeofenceStatusCodes;
@@ -81,6 +84,18 @@ public class GeofenceTrackerIntentService extends IntentService {
                 transitionString = transitionString.substring(0 ,transitionString.length() - 2);
             }
             sendNotification(transitionString);
+           // Toast.makeText(getApplicationContext(), transitionString, Toast.LENGTH_SHORT).show();
+
+            final String ftransitionString = transitionString;
+            Handler handler = new Handler(Looper.getMainLooper());
+            handler.post(new Runnable() {
+
+            @Override
+            public void run() {
+                Toast.makeText(getApplicationContext(), ftransitionString, Toast.LENGTH_SHORT).show();
+            }
+            });
+
             Log.i(Constants.TAG, "The geofence transition has been processed: " + transitionString);
         } else {
             Log.e(Constants.TAG, "An exception has occurred: " + Constants.GEOFENCE_TRANSITION_UNKNOWN + " " + geofenceTransition);

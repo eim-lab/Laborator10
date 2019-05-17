@@ -3,9 +3,9 @@
     <string name="latitude">Latitude</string>
     <string name="longitude">Longitude</string>
     <string name="radius">Radius</string>
-    <string name="current_location">Current Location</string>
-    <string name="geofence_status">Geofence Status</string>
-    <string name="add_to_geofence">Add to Geofence</string>
-    <string name="remove_from_geofence">Remove from Geofence</string>
+    <string name="current_location">Current: </string>
+    <string name="geofence_status_string">Geofence Status:</string>
+    <string name="add_to_geofence">Add to\nGeofence</string>
+    <string name="remove_from_geofence">Remove from\Geofence</string>
     <string name="ok">OK</string>
 </resources>
