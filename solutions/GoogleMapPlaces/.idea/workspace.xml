@@ -1,36 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea613920-ebbe-4240-b316-94463eb28e6e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../labtasks/GoogleMapPlaces/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../labtasks/GoogleMapPlaces/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../labtasks/GoogleMapPlaces/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../labtasks/GoogleMapPlaces/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../labtasks/GoogleMapPlaces/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../labtasks/GoogleMapPlaces/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../labtasks/GoogleMapsGeocoding/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../labtasks/GoogleMapsGeocoding/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../labtasks/GoogleMapsGeocoding/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../labtasks/GoogleMapsGeocoding/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../labtasks/GoogleMapsGeocoding/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../labtasks/GoogleMapsGeocoding/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../labtasks/GoogleMapsGeofencing/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../labtasks/GoogleMapsGeofencing/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../labtasks/GoogleMapsGeofencing/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../labtasks/GoogleMapsGeofencing/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../labtasks/GoogleMapsGeofencing/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../labtasks/GoogleMapsGeofencing/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../labtasks/GoogleMapsLocationUpdate/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../labtasks/GoogleMapsLocationUpdate/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../labtasks/GoogleMapsLocationUpdate/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../labtasks/GoogleMapsLocationUpdate/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../labtasks/GoogleMapsLocationUpdate/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../labtasks/GoogleMapsLocationUpdate/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+    <list default="true" id="ada15514-0864-4489-96bf-d859f755e0eb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GoogleMapsGeocoding/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../GoogleMapsGeocoding/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GoogleMapsGeocoding/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../GoogleMapsGeocoding/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GoogleMapsGeocoding/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../GoogleMapsGeocoding/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GoogleMapsGeofencing/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../GoogleMapsGeofencing/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GoogleMapsGeofencing/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../GoogleMapsGeofencing/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GoogleMapsGeofencing/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../GoogleMapsGeofencing/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GoogleMapsLocationUpdate/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../GoogleMapsLocationUpdate/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GoogleMapsLocationUpdate/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../GoogleMapsLocationUpdate/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GoogleMapsLocationUpdate/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../GoogleMapsLocationUpdate/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ro/pub/cs/systems/eim/lab10/googlemapplaces/view/GoogleMapsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ro/pub/cs/systems/eim/lab10/googlemapplaces/view/GoogleMapsActivity.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,43 +23,143 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view />
+      </state>
+    </system>
+  </component>
   <component name="FUSProjectUsageTrigger">
-    <session id="798968713">
+    <session id="795306093">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.closed" value="1" />
-          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.9" value="1" />
           <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="1" />
+          <entry key="xml" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="1" />
+          <entry key="XML" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="71" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="71" />
         </counts>
       </usages-collector>
     </session>
   </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+          <provider editor-type-id="android-manifest" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="281">
+              <caret line="43" column="66" selection-start-line="43" selection-start-column="66" selection-end-line="43" selection-end-column="66" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/ro/pub/cs/systems/eim/lab10/googlemapplaces/view/GoogleMapsActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="115" column="13" lean-forward="true" selection-start-line="115" selection-start-column="13" selection-end-line="115" selection-end-column="13" />
+              <folding>
+                <element signature="e#8509#9982#0" expanded="true" />
+                <element signature="e#9981#9982#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>GoogleMap</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ro/pub/cs/systems/eim/lab10/googlemapplaces/view/GoogleMapsActivity.java" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="57" />
-    <option name="y" value="63" />
-    <option name="width" value="1751" />
-    <option name="height" value="1000" />
+    <option name="x" value="67" />
+    <option name="y" value="35" />
+    <option name="width" value="1698" />
+    <option name="height" value="1004" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="1" id="Add" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="GoogleMapPlaces" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="GoogleMapPlaces" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="manifests" type="f94875db:AndroidManifestsGroupNode" />
+            </path>
+            <path>
+              <item name="GoogleMapPlaces" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="GoogleMapPlaces" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="googlemapplaces" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GoogleMapPlaces" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="googlemapplaces" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="android.sdk.path" value="/mnt/bk/Android/sdk" />
-    <property name="device.picker.selection" value="emulator-5554" />
+    <property name="android.sdk.path" value="/opt/android/SDK" />
+    <property name="device.picker.selection" value="192.168.57.102:5555" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.genymobile.genymotion.ide.idea.GdmSettings" />
   </component>
@@ -156,18 +241,19 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ea613920-ebbe-4240-b316-94463eb28e6e" name="Default Changelist" comment="" />
-      <created>1549655837871</created>
+      <changelist id="ada15514-0864-4489-96bf-d859f755e0eb" name="Default Changelist" comment="" />
+      <created>1558078513461</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1549655837871</updated>
+      <updated>1558078513461</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="57" y="63" width="1751" height="1000" extended-state="0" />
+    <frame x="67" y="35" width="1698" height="1004" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" visible="true" weight="0.329806" />
+      <window_info content_ui="combo" id="Project" visible="true" weight="0.16263603" />
       <window_info id="Structure" side_tool="true" />
       <window_info id="Build Variants" side_tool="true" />
       <window_info id="Image Layers" />
@@ -175,15 +261,15 @@
       <window_info id="Capture Tool" />
       <window_info id="Favorites" side_tool="true" />
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Run" />
-      <window_info anchor="bottom" id="Logcat" />
+      <window_info anchor="bottom" id="Run" weight="0.32943925" />
+      <window_info active="true" anchor="bottom" id="Logcat" visible="true" weight="0.47429907" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
       <window_info anchor="bottom" id="TODO" />
       <window_info anchor="bottom" id="Android Profiler" />
       <window_info anchor="bottom" id="Debug" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Build" visible="true" weight="0.32942554" />
+      <window_info anchor="bottom" id="Build" weight="0.32943925" />
       <window_info anchor="right" id="Device File Explorer" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" />
       <window_info anchor="right" id="Gradle" />
@@ -193,5 +279,26 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="43" column="66" selection-start-line="43" selection-start-column="66" selection-end-line="43" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ro/pub/cs/systems/eim/lab10/googlemapplaces/view/GoogleMapsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="115" column="13" lean-forward="true" selection-start-line="115" selection-start-column="13" selection-end-line="115" selection-end-column="13" />
+          <folding>
+            <element signature="e#8509#9982#0" expanded="true" />
+            <element signature="e#9981#9982#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
