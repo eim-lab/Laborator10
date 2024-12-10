@@ -113,6 +113,7 @@ class MainActivity:  AppCompatActivity() {
                 Call.State.Error -> {
 
                 }
+                else -> {}
             }
         }
     }

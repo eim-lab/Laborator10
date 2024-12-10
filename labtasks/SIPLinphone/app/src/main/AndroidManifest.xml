@@ -18,14 +18,6 @@
 
         </activity>
 
-        <!-- The following isn't mandatory but having a foreground service --> 
-	<!-- prevents Android to kill the app during a call -->
-        <!-- You can create your own service that inherits from this class for -->
-        <!-- simplicity or handle the foreground service yourself -->
-        <service android:name="org.linphone.core.tools.service.CoreService"
-            android:foregroundServiceType="phoneCall|camera|microphone"
-            android:stopWithTask="false" />
-
     </application>
 
 </manifest>
