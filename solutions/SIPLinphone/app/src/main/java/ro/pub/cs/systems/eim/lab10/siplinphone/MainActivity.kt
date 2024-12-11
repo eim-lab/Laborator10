@@ -64,40 +64,10 @@ class MainActivity:  AppCompatActivity() {
                     findViewById<Button>(R.id.call).isEnabled = true
                 }
 
-                // O U T G O I N G
-                Call.State.OutgoingInit -> {
-                    // First state an outgoing call will go through
-                }
-                Call.State.OutgoingProgress -> {
-                    // Right after outgoing init
-                }
-                Call.State.OutgoingRinging -> {
-                    // This state will be reached upon reception of the 180 RINGING
-                }
                 Call.State.Connected -> {
                     Toast.makeText(this@MainActivity, "remote party answered",  Toast.LENGTH_LONG).show()
                 }
-                Call.State.StreamsRunning -> {
-                    // This state indicates the call is active.
-                    // You may reach this state multiple times, for example after a pause/resume
-                    // or after the ICE negotiation completes
-                    // Wait for the call to be connected before allowing a call update
-                }
-                Call.State.Paused -> {
-                    // When you put a call in pause, it will became Paused
-                }
-                Call.State.PausedByRemote -> {
-                    // When the remote end of the call pauses it, it will be PausedByRemote
-                }
-                Call.State.Updating -> {
-                    // When we request a call update, for example when toggling video
-                }
-                Call.State.UpdatedByRemote -> {
-                    // When the remote requests a call update
-                }
-                Call.State.Error -> {
 
-                }
                 else -> {}
             }
         }
@@ -122,17 +92,11 @@ class MainActivity:  AppCompatActivity() {
 
 
         findViewById<Button>(R.id.answer).setOnClickListener {
-            // if we wanted, we could create a CallParams object
-            // and answer using this object to make changes to the call configuration
-            // (see OutgoingCall tutorial)
             core.currentCall?.accept()
         }
 
         findViewById<Button>(R.id.mute_mic).setOnClickListener {
-            // The following toggles the microphone, disabling completely / enabling the sound capture
-            // from the device microphone
-            core.setMicEnabled(!core.isMicEnabled())
-
+             core.setMicEnabled(!core.isMicEnabled())
         }
 
         findViewById<Button>(R.id.toggle_speaker).setOnClickListener {
@@ -145,8 +109,6 @@ class MainActivity:  AppCompatActivity() {
             findViewById<EditText>(R.id.remote_address).isEnabled = false
             it.isEnabled = false
             findViewById<Button>(R.id.hang_up).isEnabled = true
-            //findViewById<Button>(R.id.unregister).isEnabled = true
-
         }
 
         findViewById<Button>(R.id.hang_up).setOnClickListener {
@@ -155,27 +117,18 @@ class MainActivity:  AppCompatActivity() {
             findViewById<Button>(R.id.call).isEnabled = true
 
             if (core.callsNb != 0) {
-                // If the call state isn't paused, we can get it using core.currentCall
                 val call = if (core.currentCall != null) core.currentCall else core.calls[0]
-                // Terminating a call is quite simple
                 if(call != null)
                     call.terminate()
             }
         }
 
         findViewById<Button>(R.id.unregister).setOnClickListener {
-            // Here we will disable the registration of our Account
             val account = core.defaultAccount
             if(account != null) {
-
                 val params = account.params
-                // Returned params object is const, so to make changes we first need to clone it
                 val clonedParams = params.clone()
-
-                // Now let's make our changes
                 clonedParams.setRegisterEnabled(false)
-
-                // And apply them
                 account.params = clonedParams
 
                 it.isEnabled = false
