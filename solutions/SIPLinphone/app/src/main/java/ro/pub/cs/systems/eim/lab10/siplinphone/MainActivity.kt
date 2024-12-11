@@ -120,11 +120,8 @@ class MainActivity:  AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.main_activity)
-
         val factory = Factory.instance()
-        factory.setDebugMode(true, "Hello Linphone")
         core = factory.createCore(null, null, this)
 
         findViewById<Button>(R.id.register).setOnClickListener {
@@ -200,6 +197,21 @@ class MainActivity:  AppCompatActivity() {
             }
         }
 
+          findViewById<Button>(R.id.dtmfsend).setOnClickListener {
+              val keypress = (findViewById<EditText>(R.id.dtmfedit)).text.toString()
+              if(keypress.length < 1){
+                  Toast.makeText(this@MainActivity, "Need phone key character 0-9, +, #",  Toast.LENGTH_LONG).show()
+                  return@setOnClickListener
+              }
+
+              val call = if (core.currentCall != null)
+                    core.currentCall
+                else if( core.calls.size > 0)
+                    core.calls[0]
+                else null
+              if(call != null)
+                  call.sendDtmf(keypress[0]);
+          }
 
     }
 

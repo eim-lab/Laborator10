@@ -157,6 +157,25 @@
 
 
 
+        <Button
+            android:id="@+id/dtmfsend"
+            android:text="Send DTMF"
+            android:layout_width="wrap_content"
+            android:gravity="left"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/answer"/>
+
+        <EditText
+            android:id="@+id/dtmfedit"
+            android:layout_width="2in"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dtmfsend"
+            android:layout_alignParentLeft="true"
+            android:hint="#12"/>
+
+
+
+
 
 
     </RelativeLayout>
