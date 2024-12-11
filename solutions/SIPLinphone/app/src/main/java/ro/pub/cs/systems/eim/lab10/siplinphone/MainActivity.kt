@@ -16,38 +16,29 @@ class MainActivity:  AppCompatActivity() {
     private val coreListener = object: CoreListenerStub() {
         override fun onAccountRegistrationStateChanged(core: Core, account: Account, state: RegistrationState?, message: String) {
             findViewById<TextView>(R.id.registration_status).text = message
+            when (state) {
+                RegistrationState.Failed -> {
+                    findViewById<Button>(R.id.register).isEnabled = true
+                }
 
-            if (state == RegistrationState.Failed) {
-                findViewById<Button>(R.id.register).isEnabled = true
-            } else  if (state == RegistrationState.Cleared) {
-                findViewById<LinearLayout>(R.id.register_layout).visibility = View.VISIBLE
-                findViewById<RelativeLayout>(R.id.call_layout).visibility = View.GONE
-                findViewById<Button>(R.id.register).isEnabled = true
-            } else if (state == RegistrationState.Ok) {
-                findViewById<LinearLayout>(R.id.register_layout).visibility = View.GONE
-                findViewById<RelativeLayout>(R.id.call_layout).visibility = View.VISIBLE
-                findViewById<Button>(R.id.unregister).isEnabled = true
+                RegistrationState.Cleared -> {
+                    findViewById<LinearLayout>(R.id.register_layout).visibility = View.VISIBLE
+                    findViewById<RelativeLayout>(R.id.call_layout).visibility = View.GONE
+                    findViewById<Button>(R.id.register).isEnabled = true
+                }
+
+                RegistrationState.Ok -> {
+                    findViewById<LinearLayout>(R.id.register_layout).visibility = View.GONE
+                    findViewById<RelativeLayout>(R.id.call_layout).visibility = View.VISIBLE
+                    findViewById<Button>(R.id.unregister).isEnabled = true
+                }
+                else -> {}
             }
         }
 
-        override fun onAudioDeviceChanged(core: Core, audioDevice: AudioDevice) {
-            // This callback will be triggered when a successful audio device has been changed
-        }
-
-        override fun onAudioDevicesListUpdated(core: Core) {
-            // This callback will be triggered when the available devices list has changed,
-            // for example after a bluetooth headset has been connected/disconnected.
-        }
-
-        override fun onCallStateChanged(
-            core: Core,
-            call: Call,
-            state: Call.State?,
-            message: String
-        ) {
+        override fun onCallStateChanged(core: Core, call: Call, state: Call.State?, message: String) {
             findViewById<TextView>(R.id.call_status).text = message
 
-            // When a call is received
             when (state) {
                 // I N C O M I N G
                 Call.State.IncomingReceived -> {
@@ -84,7 +75,7 @@ class MainActivity:  AppCompatActivity() {
                     // This state will be reached upon reception of the 180 RINGING
                 }
                 Call.State.Connected -> {
-                    // When the 200 OK has been received
+                    Toast.makeText(this@MainActivity, "remote party answered",  Toast.LENGTH_LONG).show()
                 }
                 Call.State.StreamsRunning -> {
                     // This state indicates the call is active.
@@ -103,12 +94,6 @@ class MainActivity:  AppCompatActivity() {
                 }
                 Call.State.UpdatedByRemote -> {
                     // When the remote requests a call update
-                }
-                Call.State.Released -> {
-                    // Call state will be released shortly after the End state
-                    findViewById<EditText>(R.id.remote_address).isEnabled = true
-                    findViewById<Button>(R.id.call).isEnabled = true
-                    findViewById<Button>(R.id.hang_up).isEnabled = false
                 }
                 Call.State.Error -> {
 

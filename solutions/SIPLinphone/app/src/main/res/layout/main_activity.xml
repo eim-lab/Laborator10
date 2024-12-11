@@ -21,6 +21,7 @@
         <EditText
             android:id="@+id/username"
             android:hint="Username(without @domain)"
+            android:text="@string/mysipname"
             android:inputType="textEmailAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
@@ -28,6 +29,7 @@
         <EditText
             android:id="@+id/password"
             android:hint="Password"
+            android:text="@string/mysippassword"
             android:inputType="textPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
@@ -38,7 +40,7 @@
             android:layout_height="wrap_content"
             android:hint="Domain (after @)"
             android:inputType="textUri"
-            android:text="sip.linphone.org" />
+            android:text="@string/mysipdomain" />
 
 
         <RadioGroup
