@@ -31,6 +31,7 @@ class MainActivity:  AppCompatActivity() {
                     findViewById<LinearLayout>(R.id.register_layout).visibility = View.GONE
                     findViewById<RelativeLayout>(R.id.call_layout).visibility = View.VISIBLE
                     findViewById<Button>(R.id.unregister).isEnabled = true
+                    findViewById<EditText>(R.id.remote_address).isEnabled = true
                 }
                 else -> {}
             }
@@ -54,6 +55,7 @@ class MainActivity:  AppCompatActivity() {
                 Call.State.Connected -> {
                     findViewById<Button>(R.id.mute_mic).isEnabled = true
                     findViewById<Button>(R.id.toggle_speaker).isEnabled = true
+                    Toast.makeText(this@MainActivity, "remote party answered",  Toast.LENGTH_LONG).show()
                 }
                 Call.State.Released -> {
                     findViewById<Button>(R.id.hang_up).isEnabled = false
@@ -62,10 +64,6 @@ class MainActivity:  AppCompatActivity() {
                     findViewById<Button>(R.id.toggle_speaker).isEnabled = false
                     findViewById<EditText>(R.id.remote_address).text.clear()
                     findViewById<Button>(R.id.call).isEnabled = true
-                }
-
-                Call.State.Connected -> {
-                    Toast.makeText(this@MainActivity, "remote party answered",  Toast.LENGTH_LONG).show()
                 }
 
                 else -> {}
@@ -80,8 +78,7 @@ class MainActivity:  AppCompatActivity() {
         core = factory.createCore(null, null, this)
 
         findViewById<Button>(R.id.register).setOnClickListener {
-            login()
-            it.isEnabled = false
+            it.isEnabled = !login()
         }
 
         findViewById<Button>(R.id.hang_up).isEnabled = false
@@ -137,7 +134,7 @@ class MainActivity:  AppCompatActivity() {
 
           findViewById<Button>(R.id.dtmfsend).setOnClickListener {
               val keypress = (findViewById<EditText>(R.id.dtmfedit)).text.toString()
-              if(keypress.length < 1){
+              if(keypress.isEmpty()){
                   Toast.makeText(this@MainActivity, "Need phone key character 0-9, +, #",  Toast.LENGTH_LONG).show()
                   return@setOnClickListener
               }
@@ -148,9 +145,51 @@ class MainActivity:  AppCompatActivity() {
                     core.calls[0]
                 else null
               if(call != null)
-                  call.sendDtmf(keypress[0]);
+                  call.sendDtmf(keypress[0])
           }
 
+    }
+
+    private fun login():Boolean {
+        val username = findViewById<EditText>(R.id.username).text.toString()
+        val password = findViewById<EditText>(R.id.password).text.toString()
+        val domain = findViewById<EditText>(R.id.domain).text.toString()
+        val transportType = when (findViewById<RadioGroup>(R.id.transport).checkedRadioButtonId) {
+            R.id.udp -> TransportType.Udp
+            R.id.tcp -> TransportType.Tcp
+            else -> TransportType.Tls
+        }
+        Log.i("REGISTER", "success0")
+        val authInfo = Factory.instance().createAuthInfo(username, null, password, null, null, domain, null)
+        Log.i("REGISTER", "success1")
+        val params = core.createAccountParams()
+        val identity = Factory.instance().createAddress("sip:$username@$domain")
+        if(identity == null){
+            Toast.makeText(this@MainActivity, "Identity not valid",  Toast.LENGTH_LONG).show()
+            return false
+        }
+        params.identityAddress = identity
+        Log.i("REGISTER", "success2")
+        val address = Factory.instance().createAddress("sip:$domain")
+        address?.transport = transportType
+        params.serverAddress = address
+        params.setRegisterEnabled(true)
+        val account = core.createAccount(params)
+
+        core.addAuthInfo(authInfo)
+        core.addAccount(account)
+
+        core.defaultAccount = account
+        core.addListener(coreListener)
+
+        core.start()
+
+        // We will need the RECORD_AUDIO permission for video call
+        if (packageManager.checkPermission(Manifest.permission.RECORD_AUDIO, packageName) != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions(arrayOf(Manifest.permission.RECORD_AUDIO), 0)
+            return false
+        }
+        return true
     }
 
     private fun toggleSpeaker() {
@@ -178,7 +217,7 @@ class MainActivity:  AppCompatActivity() {
     private fun outgoingCall() {
         // As for everything we need to get the SIP URI of the remote and convert it to an Address
         val remoteSipUri = findViewById<EditText>(R.id.remote_address).text.toString()
-        val remoteAddress = Factory.instance().createAddress("sip:" + remoteSipUri)
+        val remoteAddress = Factory.instance().createAddress("sip:$remoteSipUri")
         remoteAddress ?: return // If address parsing fails, we can't continue with outgoing call process
 
         // We also need a CallParams object
@@ -186,8 +225,6 @@ class MainActivity:  AppCompatActivity() {
         val params = core.createCallParams(null)
         params ?: return // Same for params
 
-        // We can now configure it
-        // Here we ask for no encryption but we could ask for ZRTP/SRTP/DTLS
         params.mediaEncryption = MediaEncryption.None
         // If we wanted to start the call with video directly
         //params.enableVideo(true)
@@ -197,40 +234,4 @@ class MainActivity:  AppCompatActivity() {
         // Call process can be followed in onCallStateChanged callback from core listener
     }
 
-
-
-    private fun login() {
-        val username = findViewById<EditText>(R.id.username).text.toString()
-        val password = findViewById<EditText>(R.id.password).text.toString()
-        val domain = findViewById<EditText>(R.id.domain).text.toString()
-        val transportType = when (findViewById<RadioGroup>(R.id.transport).checkedRadioButtonId) {
-            R.id.udp -> TransportType.Udp
-            R.id.tcp -> TransportType.Tcp
-            else -> TransportType.Tls
-        }
-        val authInfo = Factory.instance().createAuthInfo(username, null, password, null, null, domain, null)
-
-        val params = core.createAccountParams()
-        val identity = Factory.instance().createAddress("sip:$username@$domain")
-        params.identityAddress = identity
-
-        val address = Factory.instance().createAddress("sip:$domain")
-        address?.transport = transportType
-        params.serverAddress = address
-        params.setRegisterEnabled(true)
-        val account = core.createAccount(params)
-
-        core.addAuthInfo(authInfo)
-        core.addAccount(account)
-
-        core.defaultAccount = account
-        core.addListener(coreListener)
-        core.start()
-
-        // We will need the RECORD_AUDIO permission for video call
-        if (packageManager.checkPermission(Manifest.permission.RECORD_AUDIO, packageName) != PackageManager.PERMISSION_GRANTED) {
-            requestPermissions(arrayOf(Manifest.permission.RECORD_AUDIO), 0)
-            return
-        }
-    }
 }
